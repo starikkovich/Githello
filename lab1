@@ -1,0 +1,26 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main()
+{
+    double x=-0.01;
+    int i=1;
+    int p;
+    int sign;
+    sign=-1;
+    std::cin >> p;
+    double s = sin (x) / x, st = 1;
+    std::cout << s << std::endl;
+    int n = 2;
+    int c=2;
+    while (i<=p) {
+        double w=pow(x,c)/n/(n+1);
+        c += 2;
+        n += 2;
+        st= st + sign * w;
+        sign = -sign;
+        i++;
+    }
+    std::cout << st << std::endl;
+    return 0;
+}

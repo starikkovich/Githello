@@ -1,0 +1,30 @@
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+using namespace std;
+int main()
+{
+    double x=-0.01;
+    int i=1;
+    int p;
+    int sign;
+    sign=-1;
+    std::cin >> p;
+    double s = sin (x) / x, st = 1;
+    std::cout << s << std::endl;
+    int n = 2;
+    int c=2;
+    int k=6;
+    long double sum = 0;
+    while ((abs(sum - s) <= pow(10, -k)))
+    {
+        sum = pow(x,c)/n/(n+1);
+        c += 2;
+        n += 2;
+        st= st + sign * sum;
+        sign = -sign;
+        i++;
+    }
+    cout << setprecision(k)<< s << " " << sum;
+    return 0;
+}
